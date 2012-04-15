@@ -1,11 +1,11 @@
 import unittest
 
-#from journal_search.tests.search import TestJournalSearch
+from covalytics.tests.parsers.jacoco_tests import TestJacocoParser
+
 
 def run():
-    pass
-    #suite = unittest.TestLoader().loadTestsFromTestCase(TestIEEEXplore)
+    suite = unittest.TestLoader().loadTestsFromTestCase(TestJacocoParser)
     #suite.addTests(unittest.TestLoader().loadTestsFromTestCase(TestJournalSearch))
     #suite.addTests(unittest.TestLoader().loadTestsFromTestCase(TestSpreadsheet))
     #suite = unittest.TestLoader().loadTestsFromTestCase(TestSpreadsheet)
-    #unittest.TextTestRunner(verbosity=2).run(suite)
+    unittest.TextTestRunner(verbosity=2).run(suite)
