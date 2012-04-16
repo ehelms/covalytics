@@ -6,6 +6,7 @@ sys.path.append(os.path.dirname(os.path.abspath(__file__)).split("/covalytics")[
 
 from covalytics.tests import test_runner
 from covalytics.parsers import jacoco
+from covalytics.analysis import merge
 
 def start():
     args = parse_args()
@@ -22,8 +23,9 @@ def start():
                 f.close()
                 save_extracted_data(extracted_data, args.directory, xml_file.split('.xml')[0])
     elif args.action == 'analyze':
-        f = open(args.suite, 'r')
-        f.close()
+        directory = args.directory + 'results/'
+        files = os.listdir(directory)
+        merge.combine(files, directory)
     elif args.action == 'test':
         test_runner.run()
 
@@ -36,7 +38,8 @@ def parse_args():
     parser_extract.add_argument('--directory', nargs='?', required=True, help='File where the coverage data is stored')
 
     parser_analyze = subparsers.add_parser('analyze', help='Used to analyze and combine multiple coverage files and generate higher level metrics.')
-    parser_analyze.add_argument('--suite', nargs='?', required=True, help='File containing the suite of coverage data files to analyze.')
+    parser_analyze.add_argument('--directory', nargs='?', required=True, help='File containing the suite of coverage data files to analyze.')
+    #parser_analyze.add_argument('--suite', nargs='?', required=True, help='File containing the suite of coverage data files to analyze.')
 
     parser_test = subparsers.add_parser('test', help='Runs the test suite')
     
