@@ -1,4 +1,10 @@
 # Django settings for covalytics project.
+import os
+import sys
+
+BASE_DIR = os.path.dirname(os.path.abspath(__file__)) + '/../'
+PROJECT_DIR = os.path.dirname(os.path.abspath(__file__))
+sys.path.insert(0, os.path.join(BASE_DIR + 'apps'))
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
@@ -118,8 +124,9 @@ INSTALLED_APPS = (
     'django.contrib.sites',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'visuals',
     # Uncomment the next line to enable the admin:
-    # 'django.contrib.admin',
+    'django.contrib.admin',
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
 )
