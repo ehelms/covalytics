@@ -4,3 +4,5 @@ hamlpy
 pygments
 django
 django-pipeline
+psycopg2
+south
