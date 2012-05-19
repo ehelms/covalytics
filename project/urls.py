@@ -8,6 +8,7 @@ urlpatterns = patterns('',
     # Examples:
     # url(r'^$', 'covalytics.views.home', name='home'),
     url(r'^visuals/', include('visuals.urls', namespace='visuals')),
+    url(r'^', include('reports.urls', namespace='reports')),
 
     # Uncomment the admin/doc line below to enable admin documentation:
     # url(r'^admin/doc/', include('django.contrib.admindocs.urls')),

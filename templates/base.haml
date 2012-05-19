@@ -13,6 +13,17 @@
     {% block js_templates %}{% endblock js_templates %}
 
   %body
+    {% block header %}
+      %header.navbar.navbar-fixed-top
+        %div.navbar-inner
+          %section.container
+            %a.brand{ "href" : "#" }
+              Covalytics
+            %ul.nav
+              %li.active
+                %a{ "href" : "#" }
+                  Reports
+    {% endblock header %}
     {% block body %}
     {% endblock body %}
     
