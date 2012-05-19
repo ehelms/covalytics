@@ -1,0 +1,21 @@
+{% load compressed %}
+
+<!DOCTYPE html>
+%html
+  %head
+    %meta{'http-equiv': 'Content-Type', 'content': 'text/html; charset=UTF-8'}
+    %title {% block title %}Covalytics{% endblock title %}
+    {% compressed_css "covalytics" %}
+    {% block stylesheet %}{% endblock stylesheet %}
+
+    {% compressed_js 'less' %}
+    
+    {% block js_templates %}{% endblock js_templates %}
+
+  %body
+    {% block body %}
+    {% endblock body %}
+    
+    {% compressed_js 'covalytics' %}
+
+    {% block javascript %}{% endblock javascript %}

@@ -1,2 +1,6 @@
 gdata
 BeautifulSoup>=3.0.8.1
+hamlpy
+pygments
+django
+django-pipeline
